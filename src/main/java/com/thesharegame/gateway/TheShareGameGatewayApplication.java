@@ -21,6 +21,10 @@ public class TheShareGameGatewayApplication {
 						.path("/portfolio/**")
 						.filters(f -> f.addRequestHeader("Hello", "World"))
 						.uri("http://localhost:8083/portfolio/"))
+				.route(p -> p
+						.path("/portfolio/**")
+						.filters(f -> f.addRequestHeader("Hello", "World"))
+						.uri("http://localhost:8083/portfolio/"))
 				.build();
 	}
 
