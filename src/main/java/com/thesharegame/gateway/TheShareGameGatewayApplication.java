@@ -22,9 +22,13 @@ public class TheShareGameGatewayApplication {
 						.filters(f -> f.addRequestHeader("Hello", "World"))
 						.uri("http://localhost:8083/portfolio/"))
 				.route(p -> p
-						.path("/portfolio/**")
+						.path("/user/**")
 						.filters(f -> f.addRequestHeader("Hello", "World"))
-						.uri("http://localhost:8083/portfolio/"))
+						.uri("http://localhost:8081/user/"))
+				.route(p -> p
+						.path("/share/**")
+						.filters(f -> f.addRequestHeader("Hello", "World"))
+						.uri("http://localhost:8082/share/"))
 				.build();
 	}
 
