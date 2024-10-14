@@ -3,6 +3,7 @@ package com.thesharegame.gateway;
 import com.netflix.appinfo.InstanceInfo;
 import com.netflix.discovery.EurekaClient;
 import com.netflix.discovery.shared.Application;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -13,6 +14,7 @@ import org.springframework.context.annotation.Bean;
 
 
 @SpringBootApplication
+@Slf4j
 public class TheShareGameGatewayApplication {
 
 	@Value("${gateway.host}")
@@ -44,6 +46,7 @@ public class TheShareGameGatewayApplication {
 	}
 
 	private String getBaseUri(ServiceName serviceName){
+		log.info("Getting base URI for " + serviceName.serviceName);
 		Application application = eurekaClient.getApplication(serviceName.serviceName);
 		InstanceInfo service = application.getInstances().get(0);
 		return service.getHomePageUrl();

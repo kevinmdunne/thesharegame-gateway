@@ -59,4 +59,7 @@ jib {
 			password = "ke6Xajoo!"
 		}
 	}
+	container {
+		args = ['--spring.config.location=classpath:/application.properties,file:/var/config/gateway_service.properties']
+	}
 }
