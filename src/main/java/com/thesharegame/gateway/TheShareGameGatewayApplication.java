@@ -39,7 +39,7 @@ public class TheShareGameGatewayApplication {
 				.route(p -> p
 						.path("/share/**")
 						.filters(f -> f.addRequestHeader("Hello", "World"))
-						.uri("http://" + host + ":8082/share/"))
+						.uri(getBaseUri(ServiceName.SHARE_SERVICE) + "share/"))
 				.build();
 	}
 
