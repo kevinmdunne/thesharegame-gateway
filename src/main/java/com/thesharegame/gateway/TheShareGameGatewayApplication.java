@@ -17,9 +17,6 @@ import org.springframework.context.annotation.Bean;
 @Slf4j
 public class TheShareGameGatewayApplication {
 
-	@Value("${gateway.host}")
-	private String host;
-
 	@Autowired
 	private EurekaClient eurekaClient;
 

@@ -60,6 +60,6 @@ jib {
 		}
 	}
 	container {
-		args = ['--spring.config.location=classpath:/application.properties,file:/var/config/gateway_service.properties']
+		args = ['--spring.config.location=classpath:/application.properties,file:/etc/thesharegame/config/gateway_service.properties']
 	}
 }
